@@ -126,26 +126,26 @@ function initCounters() {
 // Scroll Animations
 function initScrollAnimations() {
     const animatedElements = document.querySelectorAll(
-        '.feature-card, .mode-card, .coming-card, .about-feature, .screenshot-item, .social-card, .download-btn'
+        '.tile, .feature-card, .card, .shot, .social-card, .download-btn, .seat-card, .mode-chip, .metric'
     );
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
                 setTimeout(() => {
                     entry.target.style.opacity = '1';
                     entry.target.style.transform = 'translateY(0)';
-                }, index * 50);
+                }, index * 40);
             }
         });
     }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.15,
+        rootMargin: '0px 0px -40px 0px'
     });
-    
+
     animatedElements.forEach(el => {
         el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
+        el.style.transform = 'translateY(24px)';
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
     });
