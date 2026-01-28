@@ -2086,23 +2086,24 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 /* Cinematic iOS Showcase (aligned + balanced) */
+/* Cinematic iOS Showcase (flat, aligned) */
 .ios-cinematic-showcase {
     display: flex;
     flex-direction: column;
-    gap: 100px;
-    margin-bottom: 90px;
+    gap: 72px;
+    margin-bottom: 80px;
 }
 
 .ios-cinematic-item {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: 28px;
     align-items: center;
 }
 
 @media (min-width: 960px) {
     .ios-cinematic-item {
-        grid-template-columns: 1.05fr 0.95fr;
+        grid-template-columns: 1fr 0.9fr;
     }
     .ios-cinematic-item.reverse .ios-cinematic-content { order: 2; }
     .ios-cinematic-item.reverse .ios-cinematic-visual { order: 1; }
@@ -2113,111 +2114,53 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     font-size: 11px;
     font-weight: 600;
     color: var(--red);
-    letter-spacing: 3px;
-    margin-bottom: 14px;
-    opacity: 0.65;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    opacity: 0.7;
 }
 
 .ios-cinematic-title {
     font-family: var(--font-display);
-    font-size: clamp(30px, 4.8vw, 44px);
+    font-size: clamp(28px, 4.4vw, 40px);
     font-weight: 900;
     line-height: 1.05;
-    margin-bottom: 18px;
+    margin-bottom: 14px;
     color: var(--white);
 }
 
 .ios-cinematic-desc {
-    font-size: 17px;
+    font-size: 16px;
     color: var(--gray-400);
-    line-height: 1.75;
-    margin-bottom: 26px;
-}
-
-.ios-cinematic-features {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 14px;
-}
-
-@media (min-width: 520px) {
-    .ios-cinematic-features { grid-template-columns: 1fr 1fr; }
-}
-
-.c-feat {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 13px;
-    color: var(--gray-300);
-    padding: 12px 14px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--border);
-    border-radius: 12px;
+    line-height: 1.65;
+    margin-bottom: 0;
 }
 
 .ios-cinematic-visual {
-    position: relative;
     display: flex;
     justify-content: center;
-    align-items: center;
-    perspective: 900px;
 }
 
-.phone-perspective {
-    position: relative;
-    z-index: 2;
-    transform: rotateY(-8deg) rotateX(2deg);
-    transition: transform 0.45s var(--ease);
-}
-
-.ios-cinematic-item:hover .phone-perspective {
-    transform: rotateY(0deg) rotateX(0deg) scale(1.03);
-}
-
-.phone-frame-premium {
+.phone-frame-flat {
     width: 250px;
     height: 520px;
     background: #050505;
-    border-radius: 36px;
+    border-radius: 34px;
     border: 6px solid #161616;
     overflow: hidden;
-    box-shadow: 0 32px 80px rgba(0,0,0,0.7);
+    box-shadow: 0 28px 70px rgba(0,0,0,0.75);
+    transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
 }
 
-.phone-frame-premium img {
+.phone-frame-flat img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.phone-shadow {
-    position: absolute;
-    bottom: -34px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 78%;
-    height: 36px;
-    background: radial-gradient(ellipse at center, rgba(0,0,0,0.55) 0%, transparent 70%);
-    filter: blur(10px);
+.ios-cinematic-item:hover .phone-frame-flat {
+    transform: translateY(-6px);
+    box-shadow: 0 36px 80px rgba(0,0,0,0.85);
 }
-
-.ambient-glow-sphere {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 340px;
-    height: 340px;
-    border-radius: 50%;
-    filter: blur(70px);
-    opacity: 0.18;
-    z-index: 1;
-}
-
-.ambient-glow-sphere.purple { background: var(--purple); }
-.ambient-glow-sphere.blue { background: var(--blue); }
-.ambient-glow-sphere.gold { background: #ffd700; }
 
 /* Grid Gallery */
 .ios-grid-gallery {
