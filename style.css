@@ -3355,6 +3355,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     background: rgba(6,182,212,0.1);
 }
 
+.social-pill.disabled {
+    opacity: 0.5;
+    border-color: rgba(34,197,94,0.2);
+    color: var(--gray-400);
+    background: rgba(34,197,94,0.04);
+    pointer-events: none;
+}
+
 .community-grid {
     display: flex;
     flex-direction: column;
