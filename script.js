@@ -349,7 +349,7 @@ function initCounters() {
 // ============================================
 function initScrollAnimations() {
     const elements = document.querySelectorAll(
-        '.feature-card, .why-card, .faq-item, .roadmap-item, .community-card, .screenshot-item, .ios-screenshot-card, .retro-card, .ios-main-card, .ios-featured-card, .ios-gallery-card, [data-aos]'
+        '.feature-card, .why-card, .faq-item, .roadmap-item, .community-card, .socials-card, .screenshot-item, .ios-screenshot-card, .retro-card, .ios-main-card, .ios-featured-card, .ios-gallery-card, [data-aos]'
     );
     
     const observer = new IntersectionObserver((entries) => {
@@ -358,7 +358,7 @@ function initScrollAnimations() {
                 // Stagger animations for grid items
                 const parent = entry.target.parentElement;
                 const siblings = parent ? Array.from(parent.children).filter(
-                    child => child.matches('.feature-card, .why-card, .screenshot-item, .ios-screenshot-card, .retro-card, .ios-main-card, .ios-featured-card, .ios-gallery-card')
+                    child => child.matches('.feature-card, .why-card, .screenshot-item, .ios-screenshot-card, .retro-card, .ios-main-card, .ios-featured-card, .ios-gallery-card, .socials-card')
                 ) : [];
                 const index = siblings.indexOf(entry.target);
                 const delay = index >= 0 ? index * 80 : 0;
